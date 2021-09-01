@@ -1,0 +1,28 @@
+@import url(_reset.css);
+@import url(_variaveis.css);
+
+body {
+    background-color: #ffffff;
+    position: relative;
+}
+
+.container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.titulo {
+    font-size: 1.375rem;
+}
+
+.aliamento--esquerda {
+    text-align: left;
+}
+
+.aliamento--meio {
+    text-align: center;
+}
+
+.texto {
+    line-height: 26px;
+}
