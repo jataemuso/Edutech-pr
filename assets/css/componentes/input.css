@@ -1,0 +1,15 @@
+.input {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.input__valor1 {
+    width: 35%;
+
+}
+
+.input__valor2 {
+    width: 35%;
+}

@@ -1,0 +1,10 @@
+.resultado {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.resultado__p {
+    border-radius: 10px;
+}

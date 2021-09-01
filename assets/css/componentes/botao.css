@@ -1,0 +1,22 @@
+.botao__limpar {
+    background-color: red;
+    color: white;
+}
+
+.botao__limpar:hover {
+    background-color: rgb(192, 0, 0);
+    color: white;
+}
+
+.botao__calcular{
+    display: flex;
+    justify-content: center;
+    margin-left: 3rem;
+}
+
+.botao__calcular___funcao {
+    background-color: green;
+    color: white;
+    margin-right: 1rem;
+}
+
