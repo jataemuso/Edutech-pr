@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora básica | Meus projetos</title>
+    <link rel="stylesheet" href="assets/css/base/base.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/componentes/cabecalho.css">
+    <link rel="stylesheet" href="assets/css/componentes/rodape.css">
+    <link rel="stylesheet" href="assets/css/componentes/input.css">
+    <link rel="stylesheet" href="assets/css/componentes/botao.css">
+</head>
+
+<body>
+    <header class="cabecalho">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid cabecalho">
+            <a href="index.html" class="navbar-brand cabecalho__texto"><img src="assets/img/iconfinder-technologymachineelectronicdevice23-4026437_113360.svg" class="cabecalho__imagem" alt="">Meus Projetos</a>
+            <a class="navbar-brand cabecalho__texto" href="#">
+                <img src="assets/img/3700465-business-calculating-calculator-finance-maths-technological_108748.svg" alt="Logo da Calculadora" class="d-inline-block align-text-top cabecalho__imagem">Calculadora básica
+            </a>
+            </div>
+        </nav>
+    </header>    
+        <main>
+            <div class="input">
+                <div class="mb-3 input__valor1">
+                    <label for="valor1" class="form-label">Valor 1</label>
+                    <input type="number" class="form-control" id="valor1" placeholder="Insira o primeiro valor" aria-describedby="Insira o primeiro valor">
+                </div>
+                <div class="mb-3 input__valor2">
+                    <label for="valor2" class="form-label">Valor 2</label>
+                    <input type="number" class="form-control" id="valor2" placeholder="Insira o segundo valor" aria-describedby="Insira o segundo valor">
+                </div>
+            </div>
+            <div class="botao__calcular">
+                <button type="button" onclick="somar()" class="btn botao__calcular___funcao">+</button>
+                <button type="button" onclick="subtrair()" class="btn botao__calcular___funcao">-</button>
+                <button type="button" onclick="dividir()" class="btn botao__calcular___funcao">/</button>
+                <button type="button" onclick="multiplicar()" class="btn botao__calcular___funcao">*</button>
+                
+            </div>
+        </main>
+        <footer class="bg-secondary rodape fixed-bottom">
+            <a href="https://github.com/jataemuso"><img class="rodape__imagem" src="assets/img/github-svgrepo-com.svg" alt=""></a>
+        </footer>
+    <script>
+        var resultadoOP
+        var valor1 = document.getElementById("valor1");
+        var valor2 = document.getElementById("valor2");
+
+        function somar(){
+            resultadoOP = parseFloat(valor1.value) + parseFloat(valor2.value);
+            console.log(resultadoOP);
+            resultado();
+        }
+        
+        function subtrair(){
+            resultadoOP = parseFloat(valor1.value) - parseFloat(valor2.value);
+            console.log(resultadoOP);
+            resultado();
+        }
+        
+        function dividir(){
+            resultadoOP = parseFloat(valor1.value) / parseFloat(valor2.value);
+            console.log(resultadoOP);
+            resultado();
+        }
+        
+        function multiplicar(){
+            resultadoOP = parseFloat(valor1.value) * parseFloat(valor2.value);
+            console.log(resultadoOP);
+            resultado();
+        }
+
+        function resultado(){
+            var valor1 = resultadoOP;
+            document.getElementById('valor1').value=resultadoOP;
+            document.getElementById('valor2').value='';
+            
+        }
+    </script>    
+
+</body>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora media | Meus projetos</title>
+    <link rel="stylesheet" href="assets/css/base/base.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/componentes/cabecalho.css">
+    <link rel="stylesheet" href="assets/css/componentes/formulario.css">
+    <link rel="stylesheet" href="assets/css/componentes/resultado.css">
+    <link rel="stylesheet" href="assets/css/componentes/rodape.css">
+    <link rel="stylesheet" href="assets/css/componentes/botao.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <a href="index.html" class="navbar-brand cabecalho__texto"><img src="assets/img/iconfinder-technologymachineelectronicdevice23-4026437_113360.svg" class="cabecalho__imagem" alt="">Meus Projetos</a>
+            <a class="navbar-brand cabecalho__texto" href="#">
+                <img src="assets/img/calculator-svgrepo-com.svg" alt="Logo da Calculadora" class="d-inline-block align-text-top cabecalho__imagem">Calculadora de média
+            </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <form class="formulario container mt-3">
+            <div class="mb-3">
+              <label for="nota1" class="form-label">1º avaliação</label>
+              <input type="number" class="form-control" id="nota1" placeholder="Insira um número de 0 a 10" aria-describedby="Insira aqui a nota da sua 1º avaliaçao">
+              <div id="nota1" class="form-text">Insira aqui a nota da sua 1º avaliaçao</div>
+            </div>
+            <div class="mb-3">
+                <label for="nota2" class="form-label">2º avaliação</label>
+                <input type="number" class="form-control" id="nota2" placeholder="Insira um número de 0 a 10" aria-describedby="Insira aqui a nota da sua 2º avaliaçao">
+                <div id="nota2" class="form-text">Insira aqui a nota da sua 2º avaliaçao</div>
+              </div>
+              <div class="mb-3">
+                <label for="nota3" class="form-label">3º avaliação</label>
+                <input type="number" class="form-control" id="nota3" placeholder="Insira um número de 0 a 10" aria-describedby="Insira aqui a nota da sua 3º avaliaçao">
+                <div id="nota3" class="form-text">Insira aqui a nota da sua 3º avaliaçao</div>
+              </div>
+            <button type="button" onclick="media()" id="button" class="btn btn-primary">Calcular</button>
+            <button type="button" onclick="limpar()" class="btn botao__limpar">Limpar</button>
+          </form>
+
+          <div class="resultado mt-5">
+            <p id="resultado" class="resultado__p p-4"></p>
+          </div>
+    </main>    
+
+    <footer class="bg-secondary rodape">
+        <a href="https://github.com/jataemuso"><img class="rodape__imagem" src="assets/img/github-svgrepo-com.svg" alt=""></a>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var nota1 = document.getElementById("nota1");
+      var nota2 = document.getElementById("nota2");
+      var nota3 = document.getElementById("nota3");
+
+      /* document.getElementById("olocomeu").innerHTML = ; */
+
+      function output(texto) {
+            document.getElementById("resultado").innerHTML = texto;
+        }
+
+      function media() {
+        var soma = parseFloat(nota1.value) + parseFloat(nota2.value) + parseFloat(nota3.value);
+
+        var media = soma / 3;
+        media = 100*media;
+        media = parseInt(media);
+        media = media/100
+        document.getElementById("resultado").style.border = "1px solid black";
+        
+        if(parseFloat(nota1.value) > 10 || parseFloat(nota1.value) < 0 ||
+           parseFloat(nota2.value) > 10 || parseFloat(nota2.value) < 0 ||
+           parseFloat(nota3.value) > 10 || parseFloat(nota3.value) < 0) {
+          alert("Algo de errado não esta certo! \n Insira um número de 0 a 10.")
+          location.reload();
+        }
+        else {
+
+        if(media == 10){
+            
+            output("Parabéns, você foi aprovado com a nota máxima!");
+            document.getElementById("resultado").style.backgroundColor = "yellow";
+            document.getElementById("resultado").style.color = "black";
+            
+        }
+        
+        if(media >= 7 && media != 10) {
+            output("Parabéns, você foi aprovado com a média de: " + media + "!")
+            document.getElementById("resultado").style.backgroundColor = "lime";
+            document.getElementById("resultado").style.color = "black";
+        }
+        
+        if(media < 7) {
+            output("Que pena, você reprovou com a média de " + media + ", mas continue tentando! 😉")
+            document.getElementById("resultado").style.backgroundColor = "red";
+            document.getElementById("resultado").style.color = "white";
+        }
+
+      }
+
+    }
+    function limpar(){
+      document.getElementById('nota1').value='';
+      document.getElementById('nota2').value='';
+      document.getElementById('nota3').value='';
+    } 
+        
+    </script>
+</body>
+</html>
