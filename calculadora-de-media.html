@@ -60,8 +60,6 @@
       var nota2 = document.getElementById("nota2");
       var nota3 = document.getElementById("nota3");
 
-      /* document.getElementById("olocomeu").innerHTML = ; */
-
       function output(texto) {
             document.getElementById("resultado").innerHTML = texto;
         }
@@ -73,7 +71,13 @@
         media = 100*media;
         media = parseInt(media);
         media = media/100
-        document.getElementById("resultado").style.border = "1px solid black";
+
+        if(nota1.value == '' ||
+           nota2.value == '' ||
+           nota3.value == '')  {
+          alert("Insira valores nós três campos");
+        }
+        else {
         
         if(parseFloat(nota1.value) > 10 || parseFloat(nota1.value) < 0 ||
            parseFloat(nota2.value) > 10 || parseFloat(nota2.value) < 0 ||
@@ -82,6 +86,8 @@
           location.reload();
         }
         else {
+
+          document.getElementById("resultado").style.border = "1px solid black";
 
         if(media == 10){
             
@@ -106,6 +112,7 @@
       }
 
     }
+  } 
     function limpar(){
       document.getElementById('nota1').value='';
       document.getElementById('nota2').value='';
